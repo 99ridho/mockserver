@@ -4,9 +4,19 @@
 
 To enable frontend developers to applying backend response contract without relying too much to actual backend response.
 
+## Building
+
+Simply run this script
+
+```
+./build.sh
+```
+
+You can find build result at `build/mockserver`.
+
 ## How to Use
 
-Take a look on `rules.example.json`, simply copy the example to `rules.json` then adjust according to your needs. For example, it will look like this...
+Make sure your current workding directory at `build/mockserver`. Take a look on `rules.example.json`, simply copy the example to the current working directory and rename as `rules.json`. Then adjust according to your needs. For example, it will look like this...
 
 ```json
 [
@@ -30,13 +40,3 @@ Take a look on `rules.example.json`, simply copy the example to `rules.json` the
 ```
 
 Every adding the rules you must restarting the mock server.
-
-## Building
-
-Simply run this script
-
-```
-./build.sh
-```
-
-Then enter directory `build/mockserver`, add rule file on it then run `./mockserver`
