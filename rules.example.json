@@ -1,0 +1,18 @@
+[
+    {
+        "path": "/path/to/json/resource",
+        "response": {
+            "type": "JSON",
+            "value": "/path/to/json",
+            "status_code": 200
+        }
+    },
+    {
+        "path": "/path/to/text/resource",
+        "response": {
+            "type": "TEXT",
+            "value": "{}",
+            "status_code": 200
+        }
+    }
+]
