@@ -30,3 +30,13 @@ Take a look on `rules.example.json`, simply copy the example to `rules.json` the
 ```
 
 Every adding the rules you must restarting the mock server.
+
+## Building
+
+Simply run this script
+
+```
+./build.sh
+```
+
+Then enter directory `build/mockserver`, add rule file on it then run `./mockserver`

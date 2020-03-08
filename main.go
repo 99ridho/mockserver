@@ -62,7 +62,7 @@ func main() {
 	rules, err := readRulesFromFile()
 
 	if err != nil {
-		panic("Can't read rule")
+		log.Fatalf("Can't read rule, error thrown: %v\n", err)
 	}
 
 	for _, rule := range rules {
