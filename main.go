@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/99ridho/mockserver/models"
 )
@@ -69,6 +70,15 @@ func main() {
 		http.HandleFunc(rule.Path, makeHandler(rule))
 	}
 
-	log.Println("Server started")
-	http.ListenAndServe(":8181", nil)
+	args := os.Args[1:]
+	port := "8181"
+
+	if len(args) > 0 {
+		if args[0] == "--port" {
+			port = args[1]
+		}
+	}
+
+	log.Printf("Server started at port %s", port)
+	http.ListenAndServe(fmt.Sprintf(":%s", port), nil)
 }
