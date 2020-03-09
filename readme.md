@@ -39,4 +39,16 @@ Make sure your current workding directory at `build/mockserver`. Take a look on 
 ]
 ```
 
-Every adding the rules you must restarting the mock server.
+After adding some rules, you can start your server using...
+
+```
+./mockserver
+```
+
+It will run on default port `8181`, if you desire to use another port, you can execute command above as follows
+
+```
+./mockserver --port <desired_port>
+```
+
+Every adding the rules you must restart the mock server.
