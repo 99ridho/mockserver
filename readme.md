@@ -2,7 +2,7 @@
 
 ## Why
 
-To enable frontend developers to applying backend response contract without relying too much to actual backend response.
+To enable frontend developers to applying backend response contract without relying too much to actual backend response. Inspired by this [blog post](https://medium.com/traveloka-engineering/reproxy-simple-yet-powerful-mock-server-for-mobile-app-development-250581bb244e).
 
 ## Building
 
