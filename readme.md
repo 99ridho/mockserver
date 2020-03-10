@@ -6,7 +6,7 @@ To enable frontend developers to applying backend response contract without rely
 
 ## Building
 
-Simply run this script
+Make sure you have `go 1.13` or above to build, and simply run this script
 
 ```
 ./build.sh
