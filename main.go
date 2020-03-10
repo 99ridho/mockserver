@@ -73,7 +73,7 @@ func main() {
 	args := os.Args[1:]
 	port := "8181"
 
-	if len(args) > 0 {
+	if len(args) > 1 {
 		if args[0] == "--port" {
 			port = args[1]
 		}
