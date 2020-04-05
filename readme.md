@@ -51,4 +51,10 @@ It will run on default port `8181`, if you desire to use another port, you can e
 ./mockserver --port <desired_port>
 ```
 
+If you have a rules file placed on another directory, or have a different name, you can specify using `--rule`
+
+```
+./mockserver --rule path/to/your/rule/file
+```
+
 Every adding the rules you must restart the mock server.

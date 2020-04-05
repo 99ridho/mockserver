@@ -2,17 +2,17 @@ package main
 
 import (
 	"encoding/json"
+	"flag"
 	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
-	"os"
 
 	"github.com/99ridho/mockserver/models"
 )
 
-func readRulesFromFile() ([]models.Rule, error) {
-	data, err := readFile("./rules.json")
+func readRulesFromFile(path string) ([]models.Rule, error) {
+	data, err := readFile(path)
 
 	if err != nil {
 		return []models.Rule{}, err
@@ -60,7 +60,11 @@ func makeHandler(rule models.Rule) func(http.ResponseWriter, *http.Request) {
 }
 
 func main() {
-	rules, err := readRulesFromFile()
+	port := flag.String("port", "8181", "Server port")
+	rulesPath := flag.String("rule", "./rules.json", "Rule path file")
+	flag.Parse()
+
+	rules, err := readRulesFromFile(*rulesPath)
 
 	if err != nil {
 		log.Fatalf("Can't read rule, error thrown: %v\n", err)
@@ -70,15 +74,6 @@ func main() {
 		http.HandleFunc(rule.Path, makeHandler(rule))
 	}
 
-	args := os.Args[1:]
-	port := "8181"
-
-	if len(args) > 1 {
-		if args[0] == "--port" {
-			port = args[1]
-		}
-	}
-
-	log.Printf("Server started at port %s", port)
-	http.ListenAndServe(fmt.Sprintf(":%s", port), nil)
+	log.Printf("Server started at port %s", *port)
+	http.ListenAndServe(fmt.Sprintf(":%s", *port), nil)
 }
